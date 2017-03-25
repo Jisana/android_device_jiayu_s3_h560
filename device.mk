@@ -274,7 +274,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     power.default \
     power.mt6752
-    
+
+# Keyhandler
+PRODUCT_PACKAGES += \
+    com.cyanogenmod.keyhandler
+
+PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
+
+# Never dexopt the keyhandler
+$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
+
+
 # Display
 PRODUCT_PACKAGES += \
     libion
