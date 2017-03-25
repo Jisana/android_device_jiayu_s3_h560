@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libbt-vendor
     
+PRODUCT_PACKAGES += \
+    gps.mt6752 \
+    YGPS
+
 
 # Doze
 PRODUCT_PACKAGES += \
