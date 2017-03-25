@@ -9,7 +9,7 @@
 # Executables
 # Meta/Factory Mode multi_init
 /sbin/multi_init		u:object_r:init_exec:s0
-
+/sys/devices/platform/mx-gs/gesture_control u:object_r:gesture_sysfs:s0
 
 #############################
 # Data files
