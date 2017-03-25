@@ -295,6 +295,9 @@ PRODUCT_PACKAGES += \
  PRODUCT_PACKAGES += \
     libtinycompress
 
+ PRODUCT_PACKAGES += \
+    YGPS
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \
