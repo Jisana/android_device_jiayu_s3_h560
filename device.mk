@@ -40,7 +40,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.mt6752 \
     YGPS
-
+    
+PRODUCT_PACKAGES += \
+     lights.mt6752
 
 # Doze
 PRODUCT_PACKAGES += \
