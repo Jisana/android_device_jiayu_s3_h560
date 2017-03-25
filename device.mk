@@ -36,7 +36,12 @@ PRODUCT_PACKAGES += \
 # Hack to fix asec on emulated sdcard
 PRODUCT_PACKAGES += \
     libbt-vendor
+    
 
+# Doze
+PRODUCT_PACKAGES += \
+    MeizuDoze
+    
 # Audio
 PRODUCT_PACKAGES += \
     audio_policy.default \
