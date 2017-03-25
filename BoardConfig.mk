@@ -92,7 +92,9 @@ USE_MINIKIN := true
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
-
+# CyanogenMod Hardware Hooks
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS := $(DEVICE_PATH)/cmhw/
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
