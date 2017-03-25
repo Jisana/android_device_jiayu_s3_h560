@@ -194,6 +194,9 @@ PRODUCT_PACKAGES += \
 # CM apps
 PRODUCT_PACKAGES += \
     CMActions
+    
+PRODUCT_PACKAGES += \
+    libccci_util
 
 # GPS
 PRODUCT_COPY_FILES += \
