@@ -46,7 +46,11 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    MeizuDoze
+     OneplusDoze
+
+# Doze
+PRODUCT_PACKAGES += \
+     libcurl
     
 # Audio
 PRODUCT_PACKAGES += \
