@@ -137,9 +137,6 @@ WIFI_DRIVER_FW_PATH_STA := STA
 WIFI_DRIVER_FW_PATH_AP := AP
 WIFI_DRIVER_FW_PATH_P2P := P2P
 
-#cam compatibility support for 7.x
-TARGET_HAS_LEGACY_CAMERA_HAL1 := true
-
 # build old-style zip files (required for ota updater)
 BLOCK_BASED_OTA := false
 
