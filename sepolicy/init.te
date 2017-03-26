@@ -22,7 +22,8 @@ allow init frp_block_device:blk_file setattr;
 allow init logo_block_device:blk_file setattr;
 allow init para_block_device:blk_file setattr;
 allow init recovery_block_device:blk_file setattr;
-
+# Gestures
+allow init gesture_sysfs:file setattr;
 
 # Date : W14.43
 # Operation : Migration

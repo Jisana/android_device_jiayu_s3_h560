@@ -36,7 +36,22 @@ PRODUCT_PACKAGES += \
 # Hack to fix asec on emulated sdcard
 PRODUCT_PACKAGES += \
     libbt-vendor
+    
+PRODUCT_PACKAGES += \
+    gps.mt6752 \
+    YGPS
+    
+PRODUCT_PACKAGES += \
+     lights.mt6752
 
+# Doze
+PRODUCT_PACKAGES += \
+     OneplusDoze
+
+# Doze
+PRODUCT_PACKAGES += \
+     libcurl
+    
 # Audio
 PRODUCT_PACKAGES += \
     audio_policy.default \
@@ -180,6 +195,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     mtkcam
 
+# CM apps
+PRODUCT_PACKAGES += \
+    CMActions
+    
+PRODUCT_PACKAGES += \
+    libccci_util
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
@@ -256,7 +278,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     power.default \
     power.mt6752
-    
+
+# Keyhandler
+PRODUCT_PACKAGES += \
+    com.cyanogenmod.keyhandler
+
+PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
+
+# Never dexopt the keyhandler
+$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
+
+
 # Display
 PRODUCT_PACKAGES += \
     libion
@@ -266,6 +298,9 @@ PRODUCT_PACKAGES += \
 
  PRODUCT_PACKAGES += \
     libtinycompress
+
+ PRODUCT_PACKAGES += \
+    YGPS
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \

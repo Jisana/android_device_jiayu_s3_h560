@@ -12,6 +12,9 @@ typeattribute system_app mlstrustedsubject;
 # Package Name: com.mediatek.connectivity
 allow system_app nvram_agent_binder:binder call;
 
+# Gestures
+allow system_app gesture_sysfs:file rw_file_perms;
+
 # Date: 2014/08/01
 # Operation: BaseUT
 # Purpose: [Settings][Settings used list views need velocity tracker access touch dev]
