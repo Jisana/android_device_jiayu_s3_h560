@@ -150,6 +150,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
+
 # Media	
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -201,6 +202,10 @@ PRODUCT_PACKAGES += \
     
 PRODUCT_PACKAGES += \
     libccci_util
+
+PRODUCT_PACKAGES += \
+    Miravision
+    
 
 # GPS
 PRODUCT_COPY_FILES += \
