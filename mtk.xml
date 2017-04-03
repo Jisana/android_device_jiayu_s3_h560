@@ -28,7 +28,7 @@
   <project path="external/tinycompress" name="sandstranger/android_external_tinycompress_mtk" groups="pdk" />
  <project path="system/vold" name="sandstranger/android_system_vold_mtk" groups="pdk" />
  <project path="frameworks/rs" name="xen0n/android_frameworks_rs_mtk" groups="pdk" />
-  <project path="system/core" name="sandstranger/android_system_core_mtk" groups="pdk" revision="cm-13.0" />
+  <project path="system/core" name="sandstranger/android_system_core_mtk" groups="pdk" revision="kubuntu" />
   <project path="frameworks/base" name="sandstranger/android_frameworks_base" />
   <project path="frameworks/av" name="sandstranger/android_frameworks_av_mtk" groups="pdk" />
   <project path="frameworks/native" name="sandstranger/android_frameworks_native_mtk" groups="pdk" />
