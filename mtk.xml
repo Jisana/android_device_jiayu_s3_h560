@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remove-project name="LineageOS/android_bionic" />
   <remove-project name="LineageOS/android_build" />
   <remove-project name="LineageOS/android_system_core" />
   <remove-project name="LineageOS/android_frameworks_base" />
@@ -14,6 +15,8 @@
   <remove-project name="LineageOS/android_external_tinycompress" />
  <remove-project name="LineageOS/android_system_vold" />
  <remove-project name="LineageOS/android_external_wpa_supplicant_8" />
+
+ <project path="bionic" name="sandstranger/android_bionic_mtk" groups="pdk" />
   <project path="build" name="sandstranger/android_build_mtk" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
@@ -25,7 +28,7 @@
   <project path="external/tinycompress" name="sandstranger/android_external_tinycompress_mtk" groups="pdk" />
  <project path="system/vold" name="sandstranger/android_system_vold_mtk" groups="pdk" />
  <project path="frameworks/rs" name="xen0n/android_frameworks_rs_mtk" groups="pdk" />
-  <project path="system/core" name="sandstranger/android_system_core_mtk" groups="pdk" />
+  <project path="system/core" name="sandstranger/android_system_core_mtk" groups="pdk" revision="cm-13.0" />
   <project path="frameworks/base" name="sandstranger/android_frameworks_base" />
   <project path="frameworks/av" name="sandstranger/android_frameworks_av_mtk" groups="pdk" />
   <project path="frameworks/native" name="sandstranger/android_frameworks_native_mtk" groups="pdk" />
