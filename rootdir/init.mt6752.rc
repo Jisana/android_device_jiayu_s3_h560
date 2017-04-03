@@ -1430,8 +1430,12 @@ service usbdongled /system/bin/dongled
 	user root
 	group radio cache inet misc
 	enabled
-
-
+#plasma
+service plasmalxc /data/lxc/lxc/bin/lxc-start -n system
+    user root
+    group root
+    oneshot
+    disabled
 #
 #usbdongled(end)
 #
