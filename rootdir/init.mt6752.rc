@@ -25,6 +25,7 @@ on init
 
     mkdir /protect_f 0771 system system
     mkdir /protect_s 0771 system system
+    mkdir /protect_s/properties 0771 system system
     #create mountpoint for persist partition
     mkdir /persist 0771 system system
 # Create CIP mount point
