@@ -3,10 +3,6 @@ import init.xlog.rc
 import init.aee.rc
 import init.ssd.rc
 
-on early-init
-    # Turn off backlight on blank
-    write /sys/class/leds/lcd-backlight/trigger "backlight"
-
 on init
     export LD_PRELOAD "libxlog.so"
 
@@ -49,6 +45,19 @@ on init
 # change lk_env permission
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
+
+on charger
+    mkdir /dev/block/platform/mtk-msdc.0/by-name 0777 system system
+    symlink /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/logo /dev/block/platform/mtk-msdc.0/by-name/logo
+    exec /system/bin/chown -R system:system /dev/block/platform/mtk-msdc.0/by-name/logo
+    exec /system/bin/chmod 0777 /dev/block/platform/mtk-msdc.0/by-name/logo
+
+    mount ext4 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/system /system ro wait
+    start kpoc_charger
+    start servicemanager
+
+    # disable USB
+    write /sys/devices/platform/mt_usb/cmode 0
 
 on fs
     write /proc/bootprof "INIT:Mount_START"
@@ -1365,11 +1374,8 @@ service guiext-server /system/bin/guiext-server
     user system
     group system graphics
 
-# Charger
-service charger /sbin/healthd -c
+service kpoc_charger /system/bin/kpoc_charger
     class charger
-    critical
-    seclabel u:r:healthd:s0
 
 ###########add for 3Gdongle
 
