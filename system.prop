@@ -172,9 +172,10 @@ ro.mtk_live_photo_support=0
 ro.mtk_slidevideo_support=0
 ro.vold.umsdirtyratio=20
 
-########
-dalvik.vm.verify-bytecode = false
-dalvik.vm.dexopt-flags=v=n, o=v
 ro.mtk_bg_power_saving_support=1
 ro.mtk_bg_power_saving_ui=1
+
+ro.ril.disable.power.collapse=1
+pm.sleep_mode=1
+wifi.supplicant_scan_interval=360
 

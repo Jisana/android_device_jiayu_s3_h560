@@ -7,6 +7,8 @@
 # Purpose : for 120Hz Smart Switch
 allow system_server mtk_rrc_device:chr_file { read write ioctl open };
 
+# Persist
+allow system_server protect_s_data_file:dir r_dir_perms;
 
 # Date : WK14.31
 # Operation : Migration
