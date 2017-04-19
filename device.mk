@@ -166,6 +166,10 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
       charger_res_images
 
+# Charger
+PRODUCT_PACKAGES += \
+      libmtk_symbols
+
 # Wifi
 PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx \
