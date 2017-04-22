@@ -173,9 +173,9 @@ PRODUCT_PACKAGES += \
 
 # mtk_blobs
 PRODUCT_PACKAGES += \
-        libmrdump
-        libgralloc_extra
-        libgui_ext
+        libmrdump \
+        libgralloc_extra \
+        libgui_ext \
         libui_ext
 
 # Wifi
