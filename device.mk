@@ -171,6 +171,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
       libmtk_symbols
 
+# mtk_blobs
+PRODUCT_PACKAGES += \
+        libmrdump
+        libgralloc_extra
+
 # Wifi
 PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx \
