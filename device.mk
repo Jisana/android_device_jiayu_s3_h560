@@ -176,6 +176,7 @@ PRODUCT_PACKAGES += \
         libmrdump
         libgralloc_extra
         libgui_ext
+        libui_ext
 
 # Wifi
 PRODUCT_PACKAGES += \
