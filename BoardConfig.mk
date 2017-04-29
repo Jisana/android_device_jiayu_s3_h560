@@ -118,7 +118,7 @@ MTK_FM_RX_SUPPORT :=true
 
 # Power and native tap-to-wake
 TARGET_POWERHAL_VARIANT := mtk-xen0n
-TARGET_POWER_SET_FEATURE_LIB := power-feature-arale
+#TARGET_POWER_SET_FEATURE_LIB := power-feature-arale
 
 #ril
 BOARD_RIL_CLASS := ../../../device/jiayu/s3_h560/ril
