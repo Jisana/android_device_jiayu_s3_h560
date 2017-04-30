@@ -34,8 +34,6 @@ PRODUCT_PACKAGES += \
     asec_helper
 
 # Hack to fix asec on emulated sdcard
-PRODUCT_PACKAGES += \
-    libbt-vendor
     
 PRODUCT_PACKAGES += \
     gps.mt6752 \
