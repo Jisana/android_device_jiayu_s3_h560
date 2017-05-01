@@ -1058,11 +1058,6 @@ service dhcpv6_inform /system/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cSIP.conf" -D
     disabled
     oneshot
 
-service spm_script /system/bin/spm_loader
-    class core
-    user root
-    group root 
-
 service dhcp6cDNS_wlan0 /system/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cDNS.conf" -Df wlan0
 	disabled
 	oneshot
