@@ -4,7 +4,7 @@ import init.aee.rc
 import init.ssd.rc
 
 on init
-    export LD_PRELOAD "libxlog.so"
+    export LD_PRELOAD "libxlog.so:libmtk_symbols.so"
 
     # BATTERY proc
     chown shell system /proc/mtk_battery_cmd/current_cmd
@@ -25,6 +25,7 @@ on init
 
     mkdir /protect_f 0771 system system
     mkdir /protect_s 0771 system system
+    mkdir /protect_s/properties 0771 system system
     #create mountpoint for persist partition
     mkdir /persist 0771 system system
 # Create CIP mount point

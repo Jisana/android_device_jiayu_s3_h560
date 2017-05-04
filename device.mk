@@ -167,6 +167,17 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
       charger_res_images
 
+# Charger
+PRODUCT_PACKAGES += \
+      libmtk_symbols
+
+# mtk_blobs
+PRODUCT_PACKAGES += \
+        libmrdump \
+        libgralloc_extra \
+        libgui_ext \
+        libui_ext
+
 # Wifi
 PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx \
@@ -276,17 +287,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     power.default \
     power.mt6752
-
-# Keyhandler
-PRODUCT_PACKAGES += \
-    com.cyanogenmod.keyhandler
-
-PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
-
-# Never dexopt the keyhandler
-$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
-
-
+    
 # Display
 PRODUCT_PACKAGES += \
     libion

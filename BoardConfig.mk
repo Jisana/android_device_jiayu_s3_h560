@@ -42,7 +42,7 @@ TARGET_BOOTLOADER_BOARD_NAME := mt6752
 BOARD_USES_MTK_HARDWARE:= true
 BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
-BOARD_USES_LEGACY_MTK_AV_BLOB := true
+#BOARD_USES_LEGACY_MTK_AV_BLOB := true
 COMMON_GLOBAL_CFLAGS += -DMTK_HARDWARE -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL -DDISABLE_ASHMEM_TRACKING -Wno-sign-compare -Wno-unused-function
 COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE -Wno-sign-compare -Wno-unused-function
 
@@ -118,7 +118,7 @@ MTK_FM_RX_SUPPORT :=true
 
 # Power and native tap-to-wake
 TARGET_POWERHAL_VARIANT := mtk-xen0n
-TARGET_POWER_SET_FEATURE_LIB := power-feature-arale
+#TARGET_POWER_SET_FEATURE_LIB := power-feature-arale
 
 #ril
 BOARD_RIL_CLASS := ../../../device/jiayu/s3_h560/ril
