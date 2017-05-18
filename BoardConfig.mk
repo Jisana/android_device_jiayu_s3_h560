@@ -87,6 +87,9 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 # LightHAL
 TARGET_PROVIDES_LIBLIGHT := true
 
+#dt2w
+TARGET_TAP_TO_WAKE_NODE := /sys/devices/bus.2/11007000.I2C0/i2c-0/0-0020/gesture
+
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
 
