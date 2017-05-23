@@ -140,7 +140,6 @@ on post-fs-data
     chown system system /persist
     chmod 0771 /persist
     # create basic filesystem structure
-    mkdir /data/nvram 2770 root system
     mkdir /data/nvram 0771 system camera
     mkdir /data/nvram/APCFG 0770 system camera
     mkdir /data/nvram/APCFG/APRDCL 0770 system camera
