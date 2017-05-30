@@ -79,6 +79,7 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
+TARGET_BOOTANIMATION_HALF_RES := true
 # Flags
 TARGET_GLOBAL_CFLAGS   += -mfpu=neon -mfloat-abi=softfp -Wno-sign-compare -Wno-unused-function
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -Wno-sign-compare -Wno-unused-function
