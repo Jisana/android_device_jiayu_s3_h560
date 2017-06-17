@@ -195,10 +195,6 @@ typedef struct {
 
     /** sends commands to hc layer (e.g. SCO state) */
     int   (*tx_cmd)(TRANSAC transac, char *p_buf, int len);
-    /** SSR cleanup is used in HW reset cases
-     * which would cloese all the client channels
-     * and turns off the chip*/
-    void  (*ssr_cleanup)(void);
 } bt_hc_interface_t;
 
 
@@ -209,3 +205,4 @@ typedef struct {
 extern const bt_hc_interface_t* bt_hc_get_interface(void);
 
 #endif /* BT_HCI_LIB_H */
+
