@@ -39,6 +39,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
      lights.mt6752
 
+PRODUCT_PACKAGES += \
+     libcamera_parameters_ext
+
 # Doze
 PRODUCT_PACKAGES += \
      OneplusDoze
