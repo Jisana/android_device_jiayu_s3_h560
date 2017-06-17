@@ -78,8 +78,12 @@ MTK_HWC_VERSION := 1.4.1
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
+PRESENT_TIME_OFFSET_FROM_VSYNC_NS := 0
 
 TARGET_BOOTANIMATION_HALF_RES := true
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
 # Flags
 TARGET_GLOBAL_CFLAGS   += -mfpu=neon -mfloat-abi=softfp -Wno-sign-compare -Wno-unused-function
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -Wno-sign-compare -Wno-unused-function
@@ -160,6 +164,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
