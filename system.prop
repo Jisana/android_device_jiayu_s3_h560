@@ -45,12 +45,16 @@ ro.sys.usb.bicr=yes
 # USB Charge only function
 ro.sys.usb.charging.only=no
 
+# SD
+ro.sys.sdcardfs=false
+
 # audio
 ro.camera.sound.forced=0
 ro.audio.silent=0
 persist.audio.dirac.speaker=true
 
 ro.zygote.preload.enable=0
+
 
 # temporary enables NAV bar (soft keys)
 qemu.hw.mainkeys=1
