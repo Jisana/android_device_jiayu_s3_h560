@@ -29,11 +29,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
    $(LOCAL_KERNEL):kernel
 
-# Hack to fix asec on emulated sdcard
-PRODUCT_PACKAGES += \
-    asec_helper
-
-# Hack to fix asec on emulated sdcard
 PRODUCT_PACKAGES += \
     libbt-vendor
     
