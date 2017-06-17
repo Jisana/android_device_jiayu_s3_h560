@@ -1026,6 +1026,11 @@ service dhcpcd_bt-pan /system/bin/dhcpcd -BK -dd
     disabled
     oneshot
 
+service iprenew_bt-pan /system/bin/dhcpcd -n
+	class main
+	disabled
+	oneshot
+
 service dhcpcd_wlan0 /system/bin/dhcpcd -BK -dd
     class main
 	user dhcp
