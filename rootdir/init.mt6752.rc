@@ -1,7 +1,8 @@
-import init.project.rc
+import /init.project.rc
 import init.xlog.rc
-import init.aee.rc
-import init.ssd.rc
+import /init.ssd.rc
+import /init.modem.rc
+import /init.performance.rc
 
 on early-init
     # Turn off backlight on blank
@@ -63,13 +64,18 @@ on fs
     mount_all /fstab.mt6752
 
     # Workaround for old nvram blobs
-    mkdir /dev/block/platform/mtk-msdc.0/by-name 0777 system system
+    mkdir /dev/block/platform/mtk-msdc.0/by-name 0770 root system
     symlink /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/nvram /dev/block/platform/mtk-msdc.0/by-name/nvram
     symlink /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/proinfo /dev/block/platform/mtk-msdc.0/by-name/proinfo
-    exec /system/bin/chown -R system:system /dev/block/platform/mtk-msdc.0/by-name/nvram
-    exec /system/bin/chmod 0777 /dev/block/platform/mtk-msdc.0/by-name/nvram
-    exec /system/bin/chown -R system:system /dev/block/platform/mtk-msdc.0/by-name/proinfo
-    exec /system/bin/chmod 0777 /dev/block/platform/mtk-msdc.0/by-name/proinfo
+    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/nvram
+    exec /system/bin/chmod 0770 /dev/block/platform/mtk-msdc.0/by-name/nvram
+    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/proinfo
+    exec /system/bin/chmod 0770 /dev/block/platform/mtk-msdc.0/by-name/proinfo
+
+    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/secro
+    exec /system/bin/chmod 0770 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/secro
+    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/seccfg
+    exec /system/bin/chmod 0770 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/seccfg
 
     write /proc/bootprof "INIT:Mount_END"
 
@@ -436,7 +442,7 @@ on post-fs-data
     #VideoCodec
     mknod /dev/Vcodec c 160 0
     chmod 0660 /dev/Vcodec
-    chown system media /dev/Vcodec
+    chown media camera /dev/Vcodec
 
     #MJC
     chmod 0660 /dev/MJC
@@ -651,7 +657,10 @@ on post-fs-data
 
     # SMI
     chmod 0660 /dev/MTK_SMI
-    chown system media /dev/MTK_SMI
+    chown system camera /dev/MTK_SMI
+    
+    chown system camera /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
+    chmod 0660 /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
 
     #for eng mode
     chmod 0664 /dev/misc-sd
@@ -890,9 +899,6 @@ service bootlogoupdater /system/bin/boot_logo_updater
     class core
     oneshot
 
-service mobile_log_d /system/bin/mobile_log_d
-    class main
-
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B \
         -o /data/data/com.android.shell/files/bugreports/bugreport
@@ -909,7 +915,7 @@ service netdiag /system/bin/netdiag
 service nvram_daemon /system/bin/nvram_daemon
     class main
     user root
-    group root
+    group system
     oneshot
 
 # DFO (Begin)
@@ -1149,14 +1155,6 @@ service pppd_gprs /system/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepe
     group radio cache inet misc
     disabled
     oneshot
-
-##Add by T.Zh for ppp daemon
-#service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
-#    user root
-#    disabled
-#    oneshot
-#
-##
 #
 #  Modem related services (End)
 #
@@ -1179,27 +1177,6 @@ service mnld /system/xbin/mnld
     user gps
     group gps inet misc sdcard_rw sdcard_r media_rw system
     socket mnld stream 660 gps system
-
-service mdlogger /system/bin/mdlogger
-    class main
-    user shell
-    group shell system radio sdcard_rw inet sdcard_r media_rw
-    disabled
-    oneshot
-
-service dualmdlogger /system/bin/dualmdlogger
-    class main
-    user shell
-    group shell system radio sdcard_rw inet sdcard_r media_rw
-    disabled
-    oneshot
-
-service emdlogger1 /system/bin/emdlogger1
-    class main
-    user shell
-    group system shell radio sdcard_rw inet sdcard_r media_rw
-    disabled
-    oneshot
 
 #
 #sensor service (begin)
@@ -1358,12 +1335,13 @@ service emsvr /system/bin/em_svr
 
 service NvRAMAgent /system/bin/nvram_agent_binder
     class main
-    user root
-    group root
+    user system
+    group system
 
 service thermal_manager /system/bin/thermal_manager
     class main
     user root
+    group system
     oneshot
 
 service thermal /system/bin/thermal
@@ -1382,10 +1360,6 @@ service batterywarning /system/bin/batterywarning
     user shell
     group shell
 
-#service BGW /system/xbin/BGW
-#	user system
-#	group gps system radio
-#	class main
 service MtkCodecService /system/bin/MtkCodecService
     class main
     user system
