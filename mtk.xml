@@ -31,9 +31,9 @@
   <project path="frameworks/av" name="sandstranger/android_frameworks_av_mtk" groups="pdk" />
   <project path="frameworks/native" name="sandstranger/android_frameworks_native_mtk" groups="pdk" />
   <project path="frameworks/opt/telephony" name="sandstranger/android_frameworks_opt_telephony_mtk" groups="pdk" />
-  <project path="system/netd" name="sandtranger/android_system_netd_mtk" groups="pdk" />
+  <project path="system/netd" name="sandstranger/android_system_netd_mtk" groups="pdk" />
   <project path="hardware/libhardware" name="sandstranger/android_hardware_libhardware_mtk" groups="pdk" />
-   <project path="external/wpa_supplicant_8" name="sandstranger/android_external_wpa_supplicant_8-mtk"/> 
+   <project path="external/wpa_supplicant_8" name="sandstranger/android_external_wpa_supplicant_8-mtk" revision="cm-13.0-mt6592" /> 
    <project path="system/bt" name="sandstranger/android_system_bt-1" groups="pdk" />
   <!-- vim:set ai et ts=2 sw=2 sts=2 fenc=utf-8: -->
 </manifest>
