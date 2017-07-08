@@ -161,8 +161,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Charger
 PRODUCT_PACKAGES += \
-      charger_res_images \
-      libhealthd.mtk
+      charger_res_images
 
 # Charger
 PRODUCT_PACKAGES += \

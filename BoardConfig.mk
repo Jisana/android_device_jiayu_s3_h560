@@ -168,19 +168,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
-# Healthd & Charging
-HEALTHD_ENABLE_TRICOLOR_LED := true
-RED_LED_PATH := /sys/class/leds/red/brightness
-GREEN_LED_PATH := /sys/class/leds/green/brightness
-BLUE_LED_PATH := /sys/class/leds/blue/brightness
-# Next line, fix charging-mod on power off. It needs to modify the init.cpp.
-BOARD_CHARGING_MODE_BOOTING_LPM := "/sys/class/BOOT/BOOT/boot/boot_mode" 
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_CHARGER_SHOW_PERCENTAGE := true
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.mtk
-BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(LOCAL_PATH)/charger/images
-
 # Recovery
 #RECOVERY_VARIANT=twrp
 
