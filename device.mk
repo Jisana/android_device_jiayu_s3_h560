@@ -23,15 +23,27 @@ PRODUCT_PACKAGES += \
    libmtk_symbols \
    libstlport
 
-# Browser
+# Camera
 PRODUCT_PACKAGES += \
-    Gello
+     Snap \
+     libcamera_parameters_ext
     
 PRODUCT_PACKAGES += \
     EngineerMode
 
 PRODUCT_PACKAGES += \
-    gralloc_extra
+    libbt-vendor
+
+PRODUCT_PACKAGES += \
+    lights.mt6752
+
+PRODUCT_PACKAGES += \
+    gps.mt6752 \
+    libcurl \
+    YGPS
+
+PRODUCT_PACKAGES += \
+     libccci_util
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -41,6 +53,7 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/camera/camerasize.xml:system/etc/camerasize.xml \
 	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
 	$(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
@@ -69,10 +82,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal/thermal.conf:system/etc/.tp/thermal.conf \
     $(LOCAL_PATH)/configs/thermal/thermal.off.conf:system/etc/.tp/thermal.off.conf
 
-# Charger
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.mount.fs=EXT4
+# Doze
+PRODUCT_PACKAGES += \
+     MeizuDoze
 
+# file manager
+PRODUCT_PACKAGES += \
+       FileManager
+    
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
