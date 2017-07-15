@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remove-project name="AICP/frameworks_base" />
   <remove-project name="AICP/system_core" />
   <remove-project name="LineageOS/android_frameworks_opt_telephony" />
   <remove-project name="LineageOS/android_system_netd" />
   <remove-project name="AICP/frameworks_native" />
   <remove-project name="AICP/frameworks_av" />
   <remove-project name="LineageOS/android_bionic" />
+  <remove-project name="LineageOS/android_packages_apps_Nfc"/>
+  <remove-project name="LineageOS/android_external_wpa_supplicant_8" />
+  <remove-project name="LineageOS/android_system_bt" />
 
+
+  <project path="frameworks/base" name="sandstranger/android_frameworks_base" groups="pdk" revision="n7.1" />
+  <project path="external/wpa_supplicant_8" name="sandstranger/android_external_wpa_supplicant_8-mtk"  />
   <project path="external/stlport" name="LineageOS/android_external_stlport" revision="cm-14.1" />
   <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" revision="cm-14.1" />
   <project path="bionic" name="sandstranger/android_bionic_mtk" groups="pdk" />
@@ -16,5 +23,6 @@
   <project path="frameworks/native" name="sandstranger/android_frameworks_native_mtk" groups="pdk" remote="aicp" />
   <project path="frameworks/opt/telephony" name="sandstranger/android_frameworks_opt_telephony_mtk" groups="pdk" />
   <project path="system/netd" name="sandstranger/android_system_netd_mtk" groups="pdk"/>
+  <project path="system/bt" name="sandstranger/android_system_bt-1" groups="pdk" />
   <!-- vim:set ai et ts=2 sw=2 sts=2 fenc=utf-8: -->
 </manifest>
