@@ -17,6 +17,9 @@ TARGET_NO_FACTORYIMAGE := true
 
 TARGET_LDPRELOAD += libxlog.so
 
+#dexpreopt
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
 
 # CPU
 TARGET_ARCH := arm64
