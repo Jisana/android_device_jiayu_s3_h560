@@ -147,10 +147,6 @@ PRODUCT_PACKAGES += libjni_livedisplay
 # USB
 PRODUCT_PACKAGES += com.android.future.usb.accessory
 
-
-# Force linking shim
-LINKER_FORCED_SHIM_LIBS := /system/lib/libgui.so|libshim_gui.so:/system/lib64/libgui.so|libshim_gui.so:/system/lib/libmedia.so|libshim_snd.so:/system/lib64/libmedia.so|libshim_snd.so:/system/lib/libui.so|libshim_ui.so:/system/lib64/libui.so|libshim_ui.so:/system/lib/liblog.so|libshim_xlog.so:/system/lib64/liblog.so|libshim_xlog.so:/system/vendor/bin/mtk_agpsd|libshim_agps.so
-
 # Basic apps
 PRODUCT_PACKAGES += \
     Stk \
@@ -197,8 +193,16 @@ PRODUCT_COPY_FILES += \
 
 endif
 
-# Dalvik/HWUI
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+# Dalvik & hwui defaults
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-flags=--no-watch-dog \
+    dalvik.vm.dex2oat-swap=false \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapsize=256m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=8m
 
 # Common stuff
 $(call inherit-product, vendor/mad/config/common.mk)
