@@ -17,7 +17,7 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-   $(LOCAL_KERNEL):kernel
+   $(LOCAL_KERNEL):kernel 
 
 PRODUCT_PACKAGES += \
     libstlport
@@ -166,7 +166,8 @@ PRODUCT_COPY_FILES += \
 
 # TWRP
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+    $(LOCAL_PATH)/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
+    $(LOCAL_PATH)/recovery/root/sbin/mkfs.f2fs:recovery/root/sbin/mkfs.f2fs
 
 # Thermal
 PRODUCT_COPY_FILES += \
